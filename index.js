@@ -1,5 +1,23 @@
 function hasTargetSum(array, target) {
+  
   // Write your algorithm here
+  // O(n) - linear runtime
+  const arrayObject = {};
+  for (const member of array) {
+    const complement = target - member;
+    if (arrayObject[complement]) return true;
+    arrayObject[member] = true;
+  }
+  return false;
+// O(n^2) - quadratic runtime
+// function hasTargetSum(array, target) {
+//   for (let i = 0; i < array.length; i++) {
+//     const complement = target - array[i];
+//     for (let j = i + 1; j < array.length; j++)
+//       if (array[j] === complement) return true;
+//   }
+//   return false;
+// }
 }
 
 /* 
